@@ -41,10 +41,9 @@ class map_navigation():
         rospy.loginfo("qr_code ready")
 
         rospy.loginfo("Wait for zbar_opencv")
+        rospy.Subscriber('zbar_opencv_code', String, self.callback)
 
-        while not rospy.is_shutdown():
-            #wait for qr code 
-            rospy.Subscriber('zbar_opencv_code', String, self.callback)
+        rospy.spin()
 
         rospy.loginfo("exit")    
 
