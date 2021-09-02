@@ -39,7 +39,6 @@ class map_navigation():
         #make a node and ready
         rospy.init_node('qr_code_py', anonymous=True)
         rospy.loginfo("qr_code ready")
-
         rospy.loginfo("Wait for zbar_opencv")
         rospy.Subscriber('zbar_opencv_code', String, self.callback)
 
